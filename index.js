@@ -14,8 +14,10 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
-  })
-})
+  });
+});
+
+io.emit('ping', 'ping');
 
 server.listen(3000, () => {
   console.log('Listening on *:3000');
