@@ -17,7 +17,9 @@ io.on('connection', (socket) => {
   });
 });
 
-io.emit('ping', 'ping');
+setInterval(() => {
+  io.emit('ping', `Ping: ${new Date().toDateString()}`);
+}, 5000);
 
 server.listen(3000, () => {
   console.log('Listening on *:3000');
