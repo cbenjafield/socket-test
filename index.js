@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
 });
 
 setInterval(() => {
-  io.emit('ping', `Ping: ${new Date().toDateString()}`);
+  io.emit('ping', `Ping: ${new Date().toISOString()}`);
 }, 5000);
 
 server.listen(3000, () => {
