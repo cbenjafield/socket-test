@@ -10,7 +10,10 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  socket.on('device.added', data => {
+    console.log('New connection:');
+    console.log(data);
+  });
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
